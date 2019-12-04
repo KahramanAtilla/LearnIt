@@ -11,7 +11,10 @@
             <h4 class="card-title"><%= lesson.title %></h4>
             <h6 class="card-subtitle mb-2 text-muted"><%= lesson.topic.name %></h6>
             <p class="card-text"><%= lesson.content %></p>
-            <a href="#" class="card-link">En Savoir plus</a>
+            <div class="btn-group">
+              <%= link_to "En savoir plus", lesson_path(lesson.id), class: "btn btn-primary" %> 
+            </div>
+            <br></br>
             <% end %>
           </div>
         </div>
