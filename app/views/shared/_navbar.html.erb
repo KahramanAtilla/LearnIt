@@ -71,12 +71,26 @@
 
                            </ul>
                     <div class="navbarRigth">
-                           <form class="form-inline my-2 my-lg-0">
-                           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                           <input class="buttonSignIn" type="button"  value="Sign In"> 
-                            </form>
+                          
+                            <form>
+                          <!--  <i class="fas fa-user"></i> -->
+                          <!-- <input class="buttonSign" type="button"  value="Sign In"> -->
+                          <!-- <input class="buttonSign" type="button"  value="Sign Up"> -->
+                           
+                          
+                           <% if current_user %>
+                     
+                                 <button class="buttonSign" type="submit"><%= link_to "Mon profil", user_path(:id => current_user.id), class:"nav-link" %></button>
+                                     <button class="buttonSign" type="submit"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></button>
+                     
+                                 <% else %>
+                             <button class="buttonSign" type="submit"><%= link_to "Se connecter", new_user_session_path%></button>
+                             <button class="buttonSign" type="submit"><%= link_to "S'inscrire", new_user_registration_path%></button>
+                           <% end %>
 
+
+                           </form>
+                          
                      
                            
                     </div>
