@@ -1,0 +1,31 @@
+<br></br>
+<div class="text-center">
+<h1>Bienvenue sur ton profil</h1>
+</div>
+<hr>
+<br><br>
+<div class="row">
+	<div class="container justify-content-center">
+<div class="card border-primary mb-3">
+  <div class="card-body">
+    <h4 class="card-title">Mes informations</h4>
+    <h6 class="card-subtitle mb-2 text-muted">Mon prénom : <%= @user.first_name%></h6>
+		 <h6 class="card-subtitle mb-2 text-muted">Mon nom : <%= @user.last_name%></h6>
+		 <h6 class="card-subtitle mb-2 text-muted">Mon email : <%= @user.email%></h6>
+		 <%= link_to "Modifie ton profil", edit_user_registration_path, class: "card-link" %>
+		 <%= link_to "Complète ton profil", edit_user_password_path, class: "card-link" %>
+     
+  </div>
+	<br>
+</div>
+	<div class="card border-primary mb-3">
+  <div class="card-body">
+    <h4 class="card-title">Mes cours favories</h4>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+    <p class="card-text"></p>
+    <a href="#" class="card-link"></a>
+    <a href="#" class="card-link"></a>
+  </div>
+</div>
+</div>
+	</div>

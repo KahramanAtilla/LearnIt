@@ -1,0 +1,34 @@
+<%= form_for @user do |f| %>
+  <section id="cover">
+  <div id="cover-caption">
+      <div id="container" class="container">
+        <div class="row text-white ">
+          <div class="col-sm-6 offset-sm-3 text-center">
+            <br>
+            <h1 class="text-center"> Complète ton profil </h1>
+            <br>
+            <div class="info-form">
+              <div class="form-group">
+                <h5 class="text-left">Prénom</h5>
+                <%= f.text_field :first_name, class: 'form-control' %>
+                <br>
+                <h5 class="text-left">Nom</h5>
+                <%= f.text_field :last_name, class: 'form-control' %>
+                <br>
+               </div>
+               <div class="form-group">
+              <div class="actions">
+              <%= f.submit "Enregistrer",class:"btn btn-success"%>
+            </div>
+                <br><br>
+                <%= link_to "Back", :back %>
+               </div>
+           </div>
+         </div>
+       </div>
+     </div>
+    </div>
+  </section>
+     
+  
+               <% end %>

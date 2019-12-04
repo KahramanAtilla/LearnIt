@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'users/show'
   get 'topics/show'
-  get 'kit_ui/index'
+  root 'kit_ui#index'
   devise_for :users
   resources :lessons
   resources :topics
