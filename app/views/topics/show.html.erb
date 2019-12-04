@@ -1,0 +1,9 @@
+<% @topic.all.each do |x| %>
+
+<%= x.title %>
+<a class="btn btn-primary" href="<%= lesson_path(x.id) %>" role="button">Voir la ressource</a>
+<br/>
+
+
+<br/>
+<% end %>
