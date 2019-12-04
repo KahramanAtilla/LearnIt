@@ -13,7 +13,7 @@
  */
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 :root {
-  --blue: #007bff;
+  --blue: #32a8f8;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
@@ -167,13 +167,13 @@ sup {
 }
 
 a {
-  color: #78C2AD;
+  color: #32a8F8;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #4aa48a;
+  color: rgb(35, 155, 235);
   text-decoration: underline;
 }
 
@@ -2053,8 +2053,8 @@ pre code {
   background-color: #fff;
   border-color: #d0eae2;
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(120, 194, 173, 0.25);
-          box-shadow: 0 0 0 0.2rem rgba(120, 194, 173, 0.25);
+  -webkit-box-shadow: 0 0 0 0.2rem #32a8F8;
+          box-shadow: 0 0 0 0.2rem #32a8F8;
 }
 
 .form-control::-webkit-input-placeholder {
@@ -2684,38 +2684,38 @@ fieldset:disabled a.btn {
 
 .btn-success {
   color: #fff;
-  background-color: #56CC9D;
-  border-color: #56CC9D;
+  background-color: #32a8F8;
+  border-color: #32a8F8;
 }
 
 .btn-success:hover {
   color: #fff;
-  background-color: #3ac18c;
-  border-color: #37b885;
+  background-color: rgb(35, 155, 235);
+  border-color: rgb(35, 155, 235);
 }
 
 .btn-success:focus, .btn-success.focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(111, 212, 172, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(111, 212, 172, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem #32a8F8;
+          box-shadow: 0 0 0 0.2rem #32a8F8;
 }
 
 .btn-success.disabled, .btn-success:disabled {
   color: #fff;
-  background-color: #56CC9D;
-  border-color: #56CC9D;
+  background-color: #32a8F8;
+  border-color: #32a8F8;
 }
 
 .btn-success:not(:disabled):not(.disabled):active, .btn-success:not(:disabled):not(.disabled).active,
 .show > .btn-success.dropdown-toggle {
   color: #fff;
-  background-color: #37b885;
-  border-color: #34ae7d;
+  background-color: #32a8F8;
+  border-color: #32a8F8;
 }
 
 .btn-success:not(:disabled):not(.disabled):active:focus, .btn-success:not(:disabled):not(.disabled).active:focus,
 .show > .btn-success.dropdown-toggle:focus {
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(111, 212, 172, 0.5);
-          box-shadow: 0 0 0 0.2rem rgba(111, 212, 172, 0.5);
+  -webkit-box-shadow: 0 0 0 0.2rem #32a8F8;
+          box-shadow: 0 0 0 0.2rem #32a8F8;
 }
 
 .btn-info {
