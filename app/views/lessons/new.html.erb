@@ -7,7 +7,7 @@
       <br /> <br />
 
       <%= label_tag 'Matière' %><br>
-      <%= text_field_tag 'lesson.topic_id'  %>
+      <%= collection_select(:@lesson, :topic_id, Topic.all, :id, :name) %>
       <br /> <br />
 
 

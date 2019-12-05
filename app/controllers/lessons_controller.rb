@@ -15,12 +15,13 @@ class LessonsController < ApplicationController
 
    def create
     @user = current_user
+    @topics = Topic.all
     @lesson = Lesson.new(user: @user, title: params[:title], content: params[:content], topic: params[:topic])
 
     if @lesson.save
       redirect_to lessons_path
     else
-      render 'lesson/new'
+      render 'lessons/new'
     end
 
 
