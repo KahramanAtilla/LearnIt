@@ -12,17 +12,20 @@ class LessonsController < ApplicationController
   	@topics = Topic.all
   end 
 
-  def create
-    @user = User.new(first_name: params[first_name])
+
+   def create
+    @user = current_user
     @lesson = Lesson.new(user: @user, title: params[:title], content: params[:content], topic: params[:topic])
 
-    if @lesson.save && @user.save
+    if @lesson.save
       redirect_to lessons_path
-    else 
-      render "lessons/new"
+    else
+      render 'lesson/new'
     end
 
+
   end
+
 
 
 end
