@@ -2,10 +2,11 @@
 
 <form>
   <fieldset style="margin:50px">
+  	<%= form_tag url_for(action:'create'), method: "post" do %>
     <legend>Ajoute ta ressource</legend>
     <div class="form-group">
-      <label for="topicname">Matière</label>
-      <select class="form-control" id="topicname">
+      <label for="topic">Matière</label>
+      <select class="form-control" id="topic">
         <% @topics.all.each do |x| %>
     <option><%= x.name %></option>
     <%end%>
@@ -18,8 +19,8 @@
       <small id="emailHelp" class="form-text text-muted">Utilise un titre clair et concis.</small>
     </div>
     <div class="form-group">
-      <label for="lesson_content">Contenu de ta ressource</label>
-      <textarea class="form-control" id="lesson_content" rows="3" placeholder="Si tu veux taper ta ressource, écris directement dans ce champ. Sinon, upload ton fichier juste en dessous ;)"></textarea>
+      <label for="content">Contenu de ta ressource</label>
+      <textarea class="form-control" id="content" rows="3" placeholder="Si tu veux taper ta ressource, écris directement dans ce champ. Sinon, upload ton fichier juste en dessous ;)"></textarea>
     </div>
     <div class="form-group">
       <label for="exampleInputFile">Charger un fichier</label>
@@ -28,5 +29,6 @@
     </div>
    
     <button type="submit" class="btn btn-primary">Ajouter ma ressource</button>
+    <% end %>
   </fieldset>
 </form>
