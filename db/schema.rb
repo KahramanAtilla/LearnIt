@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_06_111127) do
+ActiveRecord::Schema.define(version: 2019_12_06_163804) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 2019_12_06_111127) do
   create_table "favorites", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "join_favorite_lessons", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "lesson_id"
+    t.bigint "favorite_id"
+    t.index ["favorite_id"], name: "index_join_favorite_lessons_on_favorite_id"
+    t.index ["lesson_id"], name: "index_join_favorite_lessons_on_lesson_id"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -67,6 +78,9 @@ ActiveRecord::Schema.define(version: 2019_12_06_111127) do
 
   add_foreign_key "comments", "lessons"
   add_foreign_key "comments", "users"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "join_favorite_lessons", "favorites"
+  add_foreign_key "join_favorite_lessons", "lessons"
   add_foreign_key "lessons", "topics"
   add_foreign_key "lessons", "users"
 end
