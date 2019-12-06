@@ -14,3 +14,18 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+//= require js/jquery-3.3.1.min
+//= require js/jquery-migrate-3.0.1.min
+//= require js/jquery-ui
+//= require js/popper.min
+//= require js/bootstrap.min
+//= require js/owl.carousel.min
+//= require js/jquery.stellar.min
+//= require js/jquery.countdown.min
+//= require js/bootstrap-datepicker.min
+//= require js/jquery.easing.1.3
+//= require js/aos
+//= require js/jquery.fancybox.min
+//= require js/jquery.sticky
+//= require js/main
