@@ -67,7 +67,7 @@
 
       display: inline-block;
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: #626262;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -80,3 +80,14 @@
    }
 
    .buttonLessonNew:hover {opacity: 1;}
+
+   .form-matière{
+      width: 25%;
+      background-color: #7971ea;
+   }
+
+   .titre-lessons-new{
+      background-color: #7971ea;
+      font-size: 150px;
+
+   }
