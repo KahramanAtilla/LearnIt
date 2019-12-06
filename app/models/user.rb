@@ -1,12 +1,17 @@
 class User < ApplicationRecord
   after_create :welcome_send
-
+  after_create :attribute_favorite
 
   has_many :lessons, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_one :favorite
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
+  end
+
+  def attribute_favorite
+    Favorite.create(user: self)
   end
 
   
