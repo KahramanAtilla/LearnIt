@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
 
   has_many :lessons, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
