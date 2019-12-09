@@ -1,88 +1,47 @@
+<div class="container-fluid">
+<div class="d-flex align-items-center">
+  <div class="site-logo mr-auto w-25"><a href="/">Learn it</a></div>
 
-   
-
-  
-           <!-- Navbar -->
-
-          
-
-                    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #faaa62;">
-                    <a class="navbar-brand" href="/">Learnit</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button> 
-                    
-                    
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">            
-                                <li class="nav-item">
-                                    
-                                        <a class="nav-link dropdown-toggle" href="#" id="Matieres" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Matières
-                                        </a>
-                                        
-                                        <div class="dropdown-menu" aria-labelledby="Matieres">
-                                            
-
-                                       
-
-                                            <a class="dropdown-item" href="#">Mathématiques</a>
-                                            <a class="dropdown-item" href="#">Français</a>
-                                            <a class="dropdown-item" href="#">Histoire-Géo</a>
-                                            <a class="dropdown-item" href="#">Anglais</a>
-                                            <a class="dropdown-item" href="#">EPS</a>
-                                            <a class="dropdown-item" href="#">SVT</a>
-                                            <a class="dropdown-item" href="#">Physique-Chimie</a>
-
-                                            <a class="dropdown-item" href="#">Something else here</a>
-
-                                        </div>
-
-                                    </li>    
-                                        
-                                    <li class="nav-item">     
-                                    
-                                    <a class="nav-link dropdown-toggle" href="#" id="Cours" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Mes cours
-                                    </a>
-                                    
-                                    <div class="dropdown-menu" aria-labelledby="Cours">
-                                        
-                                        <a class="dropdown-item" href="#">Ajouter un cours</a>
-                                        <a class="dropdown-item" href="#">Mes favoris</a>
-                                        <a class="dropdown-item" href="#">Voir tous mes cours</a> 
-                                        
-                                    </div>
-
-                                  
-                                    
-                                </li>
-
-                           </ul>
-                    
-                    
-                    <form>
-                    <% if current_user %>
-                      
-                          <button  class="buttonSign"><%= link_to "Mon profil", users_show_path(:id => current_user.id) %></button>
-                          <button class="buttonSign"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></button>
-
-                      
-                          <% else %>
-                  
-                      <button class="buttonSign"><%= link_to "Se connecter", new_user_session_path%></button>
-                      <button class="buttonSign"><%= link_to "S'inscrire", new_user_registration_path%></button>
-                    <% end %>
-                   
-                    
-                   
-                    </form>
-               
-                    
-   
-                </div>
-
-                
-            </nav>
-
-       
+  <div class="mx-auto text-center">
+    <nav class="site-navigation position-relative text-right" role="navigation">
+      <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
+        <li><a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Matières </a>
+          <ul class="dropdown-menu">
+            <li><a href="course_details.html">Mathématiques</a></li>
+            <li><a href="elements.html">Français</a></li>
+            <li><a href="elements.html">Histoire-Géo</a></li>
+            <li><a href="elements.html">Anglais</a></li>
+            <li><a href="elements.html">EPS</a></li>
+            <li><a href="elements.html">SVT</a></li>
+            <li><a href="elements.html">Physique-Chimie</a></li>
+          </ul>
+        </li>
+        <li><a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Cours </a>
+          <ul class="dropdown-menu">
+            <li><a href="course_details.html">Ajouter un cours</a></li>
+            <li><a href="elements.html">Mes favories</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="ml-auto w-25">
+    <nav class="site-navigation position-relative text-right" role="navigation">
+      <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
+      <form>
+      <% if current_user %>
+        <button class="btn btn-link" type="submit"><%= link_to "Mon profil", users_show_path(:id => current_user.id) %></button>
+        <button class="btn btn-link" type="submit"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></button>
+        <% else %>
+        <button class="btn btn-link" type="submit"><%= link_to "Se connecter", new_user_session_path%></button>
+        <button class="btn btn-link" type="submit"><%= link_to "S'inscrire", new_user_registration_path%></button>
+      <% end %>
+      </form>
+      </ul>
+    </nav>
+    <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
+  </div>
+</div>
+</div>

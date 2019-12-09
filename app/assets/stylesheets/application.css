@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ 
  *= require css/bootstrap.min
  *= require css/jquery-ui
  *= require css/owl.carousel.min
@@ -25,69 +26,3 @@
  *= require fonts/icomoon/style
 
  */
-
-/* bouton connexion s'incrire navBar */
-
- .buttonSign{
-    background-color: #555555;
-    color: white;
-    font-size: 15px;
-    padding: 8px 15px;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    cursor: pointer;
-  
- }
-
- .buttonSign:hover{
-    background: #777;
-    color: #555555;
-    text-decoration: none;
-
-  }
-  
-  a{
-     text-decoration: none;
-  }
-
-   .buttonSign a{
-      text-decoration: none;
-      color: black;
-   }
-
-   .buttonSign a:hover{
-      text-decoration: none;
-      color: darkmagenta;
-   }
-
-
-   .buttonLessonNew{
-
-      display: inline-block;
-  border-radius: 4px;
-  background-color: #626262;
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 200px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-   }
-
-   .buttonLessonNew:hover {opacity: 1;}
-
-   .form-matière{
-      width: 25%;
-      background-color: #7971ea;
-   }
-
-   .titre-lessons-new{
-      background-color: #7971ea;
-      font-size: 150px;
-
-   }
