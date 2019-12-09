@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :lessons, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_one :favorite
+  has_many :rates
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
