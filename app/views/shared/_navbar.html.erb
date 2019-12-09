@@ -7,21 +7,19 @@
       <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
         <li><a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Matières </a>
+
           <ul class="dropdown-menu">
-            <li><a href="course_details.html">Mathématiques</a></li>
-            <li><a href="elements.html">Français</a></li>
-            <li><a href="elements.html">Histoire-Géo</a></li>
-            <li><a href="elements.html">Anglais</a></li>
-            <li><a href="elements.html">EPS</a></li>
-            <li><a href="elements.html">SVT</a></li>
-            <li><a href="elements.html">Physique-Chimie</a></li>
+          	<% Topic.all.each do |topic| %>
+            <li><%= link_to topic.name, topic_path(topic.id) %></li>
+            <% end %>
           </ul>
+
         </li>
         <li><a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Cours </a>
           <ul class="dropdown-menu">
-            <li><a href="course_details.html">Ajouter un cours</a></li>
-            <li><a href="elements.html">Mes favories</a></li>
+          	<li><%= link_to "Ajouter un cours", new_lesson_path %></li>
+            <li><a href="elements.html">Mes favoris</a></li>
           </ul>
         </li>
       </ul>
