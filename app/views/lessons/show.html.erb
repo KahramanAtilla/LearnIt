@@ -20,7 +20,7 @@
 		</br>
 		</br>
 		</br>
-		<h4> <%="Commentaires"%> </h4>
+		<h4> <%= (@lesson.comments.count) %> <%="commentaire(s) :"%> </h4>
           <div class="card-body">
           <% @comments.all.each do |comment| %>
             <h4 class="card-title"><%= comment.title %></h4>
