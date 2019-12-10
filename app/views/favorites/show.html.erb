@@ -1,0 +1,18 @@
+<h1> Mes cours favoris </h1>
+<% @favorite.lessons.each do |x| %>
+<div class="card mb-8">
+  <div class="row no-gutters">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= x.title %></h5>
+        <p class="card-text"><%= x.content %></p>
+
+			<div class="btn-group">
+              <%= link_to "Consulter ce cours", lesson_path(x.id), class: "btn btn-primary" %> 
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>
