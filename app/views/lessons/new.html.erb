@@ -2,10 +2,9 @@
 
  <%= form_tag url_for(action:'create'), method: "post" do %>
 
-     <%= label_tag 'Titre',:class=>"titre-lessons-new" %> <br>
-     
-      <%= text_field_tag "title" %>
-      <br /> <br />
+     <%= label_tag 'Titre' %><br>
+     <%= text_field_tag "title" %>
+     <br /> <br />
 
       <%= label_tag "Matière" %><br>
      <%= select_tag "top", options_from_collection_for_select(@topics, "id", "name", "1"), class: "form-control", class: "form-matière" %>
