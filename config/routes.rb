@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'favorites/show'
   get 'comments/index'
   get 'users/index'
   get 'users/show'
