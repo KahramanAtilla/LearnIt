@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'favorites/show'
-  get 'comments/index'
   get 'users/index'
   get 'users/show'
   get 'topics/show'
@@ -10,5 +8,6 @@ Rails.application.routes.draw do
   resources :lessons
   resources :topics
   resources :comments
+  resources :favorites
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -7,6 +7,16 @@
       <div class="row banniere">
         <div class="col-8">
           <div class="card-body">
+
+		<%= form_with(url: favorite_path, method: 'patch') do %>
+		<%= button_tag(type: "submit", class: "btn btn-default") do %>
+		<span class="btn btn-button btn-primary"><i class="fas fa-cart-arrow-down pr-2"></i>Add to favorite</span>
+		<% end %>
+		<% end %>
+
+
+
+
             <h2 class="card-title"><%= @lesson.title %></h2>
             <h6 class="card-subtitle mb-2 text-muted"><%= @lesson.topic.name %></h6>
             <p class="card-text"><%= @lesson.content %></p>

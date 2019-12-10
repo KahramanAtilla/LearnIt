@@ -1,5 +1,13 @@
 class FavoritesController < ApplicationController
   def show
-  	 @favorite = Favorite.find_by(user_id: current_user.id)
+  	 @fav = Favorite.find_by(user_id: current_user.id)
+  end
+
+  def update
+    if current_user
+       @fav.lessons << $less
+    else
+       redirect_to new_user_session_path
+    end
   end
 end
