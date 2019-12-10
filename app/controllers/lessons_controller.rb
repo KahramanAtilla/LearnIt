@@ -5,6 +5,7 @@ class LessonsController < ApplicationController
 
   def show
   	@lesson = Lesson.find(params[:id])
+    $less = Lesson.find(params[:id])
   end
   
   def new
