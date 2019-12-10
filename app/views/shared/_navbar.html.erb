@@ -18,8 +18,15 @@
         <li><a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Cours </a>
           <ul class="dropdown-menu">
+
+	      <% if current_user %>
           	<li><%= link_to "Ajouter un cours", new_lesson_path %></li>
-            <li><%= link_to "Mes favoris", favorites_show_path %></li>
+                <li><%= link_to "Mes favoris", favorites_show_path %></li>
+	      <% else %>
+          	 <li><%= link_to "Ajouter un cours", new_user_session_path %></li>
+                 <li><%= link_to "Mes favoris", new_user_session_path %></li>
+	       <% end %>
+
 
           </ul>
         </li>
