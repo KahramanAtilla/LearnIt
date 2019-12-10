@@ -1,24 +1,7 @@
-# README
+# Learn it 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Online link:
+https://learnit-thp.herokuapp.com/
 
-Things you may want to cover:
+### Learn it permet de partager tes meilleurs fiche de cours avec le reste du monde :)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
