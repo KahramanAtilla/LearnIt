@@ -13,7 +13,7 @@
             <h6 class="card-subtitle mb-2 text-muted"> <%= "Leçon de : " %><%= lesson.user.first_name %> <%= lesson.user.last_name %></h6>
             <p class="card-text"><%= lesson.content %></p>
             <div class="btn-group">
-              <%= link_to "En savoir plus", lesson_path(lesson.id), class: "btn btn-primary" %> 
+              <%= link_to "Consulter ce cours", lesson_path(lesson.id), class: "btn btn-primary" %> 
             </div>
             <br></br>
             <% end %>

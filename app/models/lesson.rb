@@ -5,4 +5,5 @@ class Lesson < ApplicationRecord
   has_many :join_favorite_lessons
   has_many :favorites, through: :join_favorite_lessons
   has_many :rates
+  has_many :proposals
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_09_181014) do
+ActiveRecord::Schema.define(version: 2019_12_09_221617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,17 @@ ActiveRecord::Schema.define(version: 2019_12_09_181014) do
     t.bigint "topic_id"
     t.index ["topic_id"], name: "index_lessons_on_topic_id"
     t.index ["user_id"], name: "index_lessons_on_user_id"
+  end
+
+  create_table "proposals", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "lesson_id"
+    t.index ["lesson_id"], name: "index_proposals_on_lesson_id"
+    t.index ["user_id"], name: "index_proposals_on_user_id"
   end
 
   create_table "rates", force: :cascade do |t|
@@ -95,6 +106,8 @@ ActiveRecord::Schema.define(version: 2019_12_09_181014) do
   add_foreign_key "join_favorite_lessons", "lessons"
   add_foreign_key "lessons", "topics"
   add_foreign_key "lessons", "users"
+  add_foreign_key "proposals", "lessons"
+  add_foreign_key "proposals", "users"
   add_foreign_key "rates", "lessons"
   add_foreign_key "rates", "users"
 end
