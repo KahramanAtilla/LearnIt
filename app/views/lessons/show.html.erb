@@ -12,6 +12,7 @@
             <p class="card-text"><%= @lesson.content %></p>
             <a href="#" class="card-link">Card link</a>
             <a href="#" class="card-link">Another link</a>
+
           </div>
 
 
@@ -22,7 +23,7 @@
 		</br>
 		<h4> <%= (@lesson.comments.count) %> <%="commentaire(s) :"%> </h4>
           <div class="card-body">
-          <% @comments.all.each do |comment| %>
+          <% @lesson.comments.all.each do |comment| %>
             <h4 class="card-title"><%= comment.title %></h4>
             <h6 class="card-subtitle mb-2 text-muted"> <%= "Commentaire de : " %><%= comment.user.first_name %> <%= comment.user.last_name %></h6>
             <p class="card-text"><%= comment.content %></p>
