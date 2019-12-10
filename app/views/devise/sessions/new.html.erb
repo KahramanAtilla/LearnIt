@@ -5,8 +5,7 @@
       <div class="row text-white ">
         <div class="col-sm-6 offset-sm-3 text-center">
           <br>
-          <h1 class="text-center"> Connectez vous </h1>
-          <br>
+          <h1 class="text-center text-black section-title"> Connectez vous </h1>
           <div class="info-form">
           <div>
             <%= f.email_field :email, placeholder: "Email", autofocus: true, autocomplete: "email", class:"form-control" %>
@@ -25,7 +24,7 @@
           <% end %>
           <br></br>
           <div>
-            <%= f.submit "Connexion", class:"btn btn-success" %>
+            <%= f.submit "Connexion", class: "btn btn-primary py-3 px-5 btn-block btn-pill" %>
           </div>
           <% end %>
 
