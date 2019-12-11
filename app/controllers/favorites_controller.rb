@@ -5,7 +5,7 @@ class FavoritesController < ApplicationController
 
   def update
     if current_user
-       @fav.lessons << $less
+       Favorite.find_by(user_id: current_user.id).lessons << $less
     else
        redirect_to new_user_session_path
     end
