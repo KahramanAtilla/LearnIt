@@ -1,0 +1,48 @@
+.content-view {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  width: 85vw;
+}
+
+.body-view {
+  flex-direction: column !important;
+}
+
+.align-start {
+  align-self: start;
+}
+
+.comment-notes {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-view {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: start !important;
+}
+
+.star {
+  width: 50px;
+  height: 50px;
+}
+
+.star-btn {
+  background-color: white;
+  border: 1px solid black !important;
+}
+
+.star-btn:hover {
+  background-color: white;
+  border: 1px solid white !important;
+}
+
+.border_2 {
+  border-left: 1px solid #bfbfbf !important;
+  border-right: 1px solid #bfbfbf !important;
+}
+
