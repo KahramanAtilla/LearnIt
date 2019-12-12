@@ -1,0 +1,27 @@
+.title {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.width_50 {
+  width: 90px;
+  height: 90px;
+}
+
+.cards-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 4%;
+  border: 1px solid white !important;
+  width: 20%;
+  text-align: center;
+}
