@@ -13,6 +13,7 @@
 		<span class="btn btn-button btn-primary"><i class="fas fa-cart-arrow-down pr-2"></i>Add to favorite</span>
 		<% end %>
 		<% end %>
+		<br/>
 
 
 
@@ -22,6 +23,10 @@
             <p class="card-text"><%= @lesson.content %></p>
             <a href="#" class="card-link">Card link</a>
             <a href="#" class="card-link">Another link</a>
+
+
+
+
 
           </div>
 
@@ -39,8 +44,6 @@
             <p class="card-text"><%= comment.content %></p>
             <br></br>
             <% end %>
-          </div>
-		</div>
 
 
         <%= form_tag comments_path(lesson_id: params['id'], action: 'create') do%>
@@ -51,6 +54,8 @@
         <%= submit_tag "Ajouter un commentaire", class: 'btn btn-primary' %>
         <%end%>
 
+          </div>
+          </div>
         </div>
       </div>
     </div>
