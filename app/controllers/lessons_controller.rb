@@ -9,7 +9,7 @@ class LessonsController < ApplicationController
   end
   
   def new
-    @lesson = Lesson.new(user: @user, title: params[:title], content: params[:content], topic: params[:topic])
+    @lesson = Lesson.new
   	@topics = Topic.all
   end 
 

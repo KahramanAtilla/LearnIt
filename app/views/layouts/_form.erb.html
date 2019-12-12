@@ -1,0 +1,17 @@
+<%= form_with(model: lesson, local: true) do |form| %>
+  
+  <div class="field">
+    <%= form.label "Contenu du cours" %>
+    <%= form.text_field :content %>
+    <%= form.label "Titre" %>
+    <%= form.string :title %>
+    <%= form.label "Matière" %>
+    <%= f.input :role do %>
+      <%= f.select :topic, options_from_collection_for_select(@topics, "id", "name", "1"), class: "form_tag-control", class: "form_tag-matière" %>
+    <%= end ù>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
