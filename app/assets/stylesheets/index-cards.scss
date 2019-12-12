@@ -91,3 +91,9 @@
 .white-title {
   color: white;
 }
+
+@media (max-width: 410px) {
+  .grey-border {
+    display: none;
+  }
+}

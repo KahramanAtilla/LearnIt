@@ -6,29 +6,31 @@
       <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
         <li><a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Matières </a>
-
           <ul class="dropdown-menu">
           	<% Topic.all.each do |topic| %>
             <li><%= link_to topic.name, topic_path(topic.id) %></li>
             <% end %>
           </ul>
-
         </li>
         <li><a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Cours </a>
         <ul class="dropdown-menu">
   	      <% if current_user %>
             	<li><%= link_to "Ajouter un cours", new_lesson_path %></li>
-                  <li><%= link_to "Mes favoris", favorite_path(current_user.id) %></li>
+              <li><%= link_to "Mes favoris", favorite_path(current_user.id) %></li>
   	      <% else %>
-            	 <li><%= link_to "Ajouter un cours", new_user_session_path %></li>
-                   <li><%= link_to "Mes favoris", new_user_session_path %></li>
+            	<li><%= link_to "Ajouter un cours", new_user_session_path %></li>
+              <li><%= link_to "Mes favoris", new_user_session_path %></li>
   	       <% end %>
         </ul>
         </li>
       </ul>
     </nav>
   </div>
+    <%= form_tag(lessons_path, method: :get) do %>
+      <%= text_field_tag :title, params[:title], placeholder: 'recherche', class: 'text-fiels' %>
+      <%= submit_tag 'Search', name: nil, redirect_to: lessons_path, class: 'btn-search' %>
+    <% end %>
   <div class="ml-auto w-25">
     <nav class="site-navigation position-relative text-right" role="navigation">
       <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
