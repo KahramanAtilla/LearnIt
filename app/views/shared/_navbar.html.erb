@@ -1,53 +1,76 @@
-<div class="container-fluid">
-<div class="d-flex align-items-center">
-  <div class="site-logo mr-auto w-25"><a href="/">Learn it</a></div>
-
-  <div class="mx-auto text-center">
-    <nav class="site-navigation position-relative text-right" role="navigation">
-      <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
-        <li><a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Matières </a>
-
+ <div class="container-fluid">
+  <div class="d-flex align-items-center">
+    <div class="site-logo mr-auto w-25"><a href="/">Learn it</a></div>
+    <div class="mx-auto text-center">
+      <nav class="site-navigation position-relative text-right" role="navigation">
+        <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
+          <li><a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Matières </a>
           <ul class="dropdown-menu">
-          	<% Topic.all.each do |topic| %>
+              <% Topic.all.each do |topic| %>
             <li><%= link_to topic.name, topic_path(topic.id) %></li>
             <% end %>
           </ul>
-
         </li>
         <li><a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Cours </a>
-          <ul class="dropdown-menu">
-
-	      <% if current_user %>
-          	<li><%= link_to "Ajouter un cours", new_lesson_path %></li>
-                <li><%= link_to "Mes favoris", favorite_path(current_user.id) %></li>
-	      <% else %>
-          	 <li><%= link_to "Ajouter un cours", new_user_session_path %></li>
-                 <li><%= link_to "Mes favoris", new_user_session_path %></li>
-	       <% end %>
-
-
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </div>
-  <div class="ml-auto w-25">
-    <nav class="site-navigation position-relative text-right" role="navigation">
-      <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
+        <ul class="dropdown-menu">
+            <% if current_user %>
+            <li><%= link_to "Ajouter un cours", new_lesson_path %></li>
+          <li><%= link_to "Mes favoris", favorite_path(current_user.id) %></li>
+            <% else %>
+            <li><%= link_to "Ajouter un cours", new_user_session_path %></li>
+          <li><%= link_to "Mes favoris", new_user_session_path %></li>
+            <% end %>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+<div class="ml-auto w-25">
+  <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
       <form>
-      <% if current_user %>
+        <% if current_user %>
         <button class="btn btn-link" type="submit"><%= link_to "Mon profil", users_show_path(:id => current_user.id) %></button>
         <button class="btn btn-link" type="submit"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></button>
         <% else %>
         <button class="btn btn-link" type="submit"><%= link_to "Se connecter", new_user_session_path%></button>
         <button class="btn btn-link" type="submit"><%= link_to "S'inscrire", new_user_registration_path%></button>
-      <% end %>
+        <% end %>
       </form>
-      </ul>
-    </nav>
-    <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
-  </div>
+    </ul>
+  </nav>
+  <a href="#" class="d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a>
 </div>
 </div>
+</div>
+
+<!-- <a href="/">Learn it</a>
+<ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
+  <a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  Matières </a>
+  <ul class="dropdown-menu">
+    <% Topic.all.each do |topic| %>
+    <li>
+      <%= link_to topic.name, topic_path(topic.id) %>
+    </li>
+    <% end %>
+  </ul>
+  <ul>
+    <li>
+      <a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Cours </a>
+    </li>
+  </ul>
+  <ul class="dropdown-menu">
+    <% if current_user %>
+    <li><%= link_to "Ajouter un cours", new_lesson_path %></li>
+    <li><%= link_to "Mes favoris", favorite_path(current_user.id) %></li>
+    <% else %>
+    <li><%= link_to "Ajouter un cours", new_user_session_path %></li>
+    <li><%= link_to "Mes favoris", new_user_session_path %></li>
+    <% end %>
+  </ul>
+</ul> -->
+
