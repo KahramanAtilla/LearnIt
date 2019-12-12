@@ -1,7 +1,7 @@
 
 <!-- Swiper -->
   <div class="swiper-container">
-    <div class="swiper-wrapper">
+    <div class="swiper-wrapper swiper-heigth">
       <div class="swiper-slide">
         <%= image_tag('banner.jpg', class: 'banner') %>
       </div>
@@ -29,6 +29,7 @@
         De consulter des cours partout dans le monde
       </p>
     </div>
+    <div class="grey-border"></div>
     <div class="card-icon">
       <%= image_tag('laptop.svg', class: "width_50") %>
       <p>
@@ -36,6 +37,7 @@
         De partager tes meilleures ressources
       </p>
     </div>
+    <div class="grey-border"></div>
     <div class="card-icon">
       <%= image_tag('thought.svg', class: "width_50") %>
       <p>
@@ -44,25 +46,42 @@
       </p>
     </div>
   </div>
-
+  <h3 class="title mb-4">
+    Les 10 derniers cours partagés par les membres de Learn it :
+  </h3>
 
   <div class="container mt-4" >
     <div class="card">
       <div class="row banniere">
-        <div class="col-8">
-          <div class="card-body">
-          <% Lesson.all.each do |lesson| %>
-            <h4 class="card-title"><%= lesson.title %></h4>
-            <h6 class="card-subtitle mb-2 text-muted"><%= lesson.topic.name %></h6>
-            <h6 class="card-subtitle mb-2 text-muted"> <%= "Leçon de : " %><%= lesson.user.first_name %> <%= lesson.user.last_name %></h6>
-            <p class="card-text"><%= lesson.content %></p>
-            <div class="btn-group">
-              <%= link_to "Consulter ce cours", lesson_path(lesson.id), class: "btn btn-primary" %>
+        <div class="">
+          <% @lessons.each do |lesson| %>
+            <div class="element">
+              <div class="card-body">
+                <div class="text-card">
+                  <h4 class="card-title"><%= lesson.title %></h4>
+                  <h6 class="card-subtitle mb-2 text-muted"><%= lesson.topic.name %></h6>
+                  <h6 class="card-subtitle mb-2 text-muted"> <%= "Leçon de : " %><%= lesson.user.first_name %> <%= lesson.user.last_name %></h6>
+                  <p class="card-text"><%= lesson.content[0..200] %></p>
+                </div>
+                <div class="btn-card">
+                  <div class="btn-group">
+                    <%= link_to "Inscris-toi pour consulter", lesson_path(lesson.id), class: "btn btn-primary btn-index" %>
+                  </div>
+                </div>
+              </div>
+              <div class="separator"></div>
             </div>
-            <br></br>
-            <% end %>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
+  <div class="black-zone">
+  <h2 class="title mt-4 white-title">
+    N'attends plus :
+  </h2>
+    <%= link_to "Inscris-toi !", new_user_registration_path, class: "btn btn-primary big-btn" %>
+  </div>
+
+
+

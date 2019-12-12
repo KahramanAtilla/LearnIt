@@ -1,64 +1,48 @@
-<!DOCTYPE htmL>
-
-<html>
-  <body>
-  <div class="container mt-4" >
-    <div class="card shadow-lg">
-      <div class="row banniere">
-        <div class="col-8">
-          <div class="card-body">
-
-		<%= form_with(url: favorite_path, method: 'patch') do %>
-		<%= button_tag(type: "submit", class: "btn btn-default") do %>
-		<span class="btn btn-button btn-primary"><i class="fas fa-cart-arrow-down pr-2"></i>Add to favorite</span>
-		<% end %>
-		<% end %>
-		<br/>
-
-
-
-
-            <h2 class="card-title"><%= @lesson.title %></h2>
-            <h6 class="card-subtitle mb-2 text-muted"><%= @lesson.topic.name %></h6>
-            <p class="card-text"><%= @lesson.content %></p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
-
-
-
-
-
-          </div>
-
-
-
-		<div class="col-8">
-		</br>
-		</br>
-		</br>
-		<h4> <%= (@lesson.comments.count) %> <%="commentaire(s) :"%> </h4>
-          <div class="card-body">
-          <% @lesson.comments.all.each do |comment| %>
-            <h4 class="card-title"><%= comment.title %></h4>
-            <h6 class="card-subtitle mb-2 text-muted"> <%= "Commentaire de : " %><%= comment.user.first_name %> <%= comment.user.last_name %></h6>
-            <p class="card-text"><%= comment.content %></p>
-            <br></br>
+<div class="container mt-4" >
+  <div class="card">
+    <div class="row banniere">
+      <div class="border_2">
+        <div class="card-body body-view">
+          <div class="content-view">
+            <div class="title-card">
+              <h1 class="card-title"><%= @lesson.title %></h1>
+            </div>
+            <%= form_with(url: favorite_path, method: 'patch') do %>
+              <%= button_tag(type: "submit", class: "btn btn-default star-btn") do %>
+                <%= image_tag('star.png', class: "star") %>
+              <% end %>
             <% end %>
-
-
-        <%= form_tag comments_path(lesson_id: params['id'], action: 'create') do%>
-        <%= label_tag 'title' %><br>
-        <%= text_field_tag :title %><br>
-        <%= label_tag 'comment' %><br>
-        <%= text_area_tag :content %><br>
-        <%= submit_tag "Ajouter un commentaire", class: 'btn btn-primary' %>
-        <%end%>
-
           </div>
+          <h6 class="card-subtitle mb-2 text-muted align-start ml-3"><%= @lesson.topic.name %></h6>
+          <p class="card-text align-start ml-3"><%= @lesson.content %></p>
+          <a href="#" class="card-link align-start ml-3">Card link</a>
+          <a href="#" class="card-link align-start ml-3">Another link</a>
+        </div>
+        <div class="separator"></div>
+        <div class="col-8">
+          </br>
+
+          </br>
+          <div class="comment-notes">
+            <h4> <%= (@lesson.comments.count) %> <%="commentaire(s) :"%> </h4>
+            <div class="card-body card-view">
+              <% @lesson.comments.all.each do |comment| %>
+              <h4 class="card-title"><%= comment.title %></h4>
+              <h6 class="card-subtitle mb-2 text-muted"> <%= "Commentaire de : " %><%= comment.user.first_name %> <%= comment.user.last_name %></h6>
+              <p class="card-text"><%= comment.content %></p>
+              <br></br>
+              <% end %>
+              <%= form_tag comments_path(lesson_id: params['id'], action: 'create') do%>
+              <%= label_tag 'title' %><br>
+              <%= text_field_tag :title %><br>
+              <%= label_tag 'comment' %><br>
+              <%= text_area_tag :content %><br>
+              <%= submit_tag "Ajouter un commentaire", class: 'btn btn-primary' %>
+              <%end%>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  </body>
-</html>
+</div>

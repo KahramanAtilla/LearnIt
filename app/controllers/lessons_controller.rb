@@ -1,17 +1,17 @@
 class LessonsController < ApplicationController
   def index
-    @lessons = Lesson.all
+    @lessons = Lesson.all.last(10)
   end
 
   def show
   	@lesson = Lesson.find(params[:id])
     $less = Lesson.find(params[:id])
   end
-  
+
   def new
     @lesson = Lesson.new
   	@topics = Topic.all
-  end 
+  end
 
 
    def create
