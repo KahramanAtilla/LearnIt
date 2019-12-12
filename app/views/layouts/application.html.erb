@@ -10,6 +10,14 @@
 
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+    <script src="https://unpkg.com/swiper/js/swiper.js"></script>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+    <link rel="stylesheet" href="path/to/swiper.min.css">
+
   </head>
     
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -35,6 +43,28 @@
     <footer class="footer-section bg-white">
       <%= render "shared/footer" %>
     </footer>
-    
+
+    <script src="path/to/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+<!--     <script>
+    var swiper = new Swiper('.swiper-container', {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+    </script>
+     -->
   </body>
 </html>
