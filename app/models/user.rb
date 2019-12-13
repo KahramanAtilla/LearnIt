@@ -4,7 +4,7 @@ class User < ApplicationRecord
 
   has_many :lessons, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_one :favorite
+  has_one :favorite, dependent: :destroy
   has_many :rates
   has_many :proposals
 
