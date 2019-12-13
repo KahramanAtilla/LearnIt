@@ -7,8 +7,14 @@
         <li><a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Matières </a>
           <ul class="dropdown-menu">
+            <% if current_user %>
           	<% Topic.all.each do |topic| %>
             <li><%= link_to topic.name, topic_path(topic.id) %></li>
+            <% end %>
+            <% else %>
+            <% Topic.all.each do |topic| %>
+            <li><%= link_to topic.name, new_user_session_path %></li>
+            <% end %>
             <% end %>
           </ul>
         </li>
@@ -28,7 +34,7 @@
     </nav>
   </div>
     <%= form_tag(lessons_path, method: :get) do %>
-      <%= text_field_tag :title, params[:title], placeholder: 'recherche', class: 'text-fiels' %>
+      <%= text_field_tag :title, params[:title], placeholder: 'Rechercher un cours', class: 'text-fiels' %>
       <%= submit_tag 'Search', name: nil, redirect_to: lessons_path, class: 'btn-search' %>
     <% end %>
   <div class="ml-auto w-25">

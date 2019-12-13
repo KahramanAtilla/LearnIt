@@ -1,10 +1,10 @@
 
 <% if params[:title] %>
-  <div class="container mt-4" >
+  <div class="center mt-4" >
     <div class="card">
       <div class="row banniere">
         <div class="">
-
+      
           <% @lessons.each do |lesson| %>
             <div class="element">
               <div class="card-body">
@@ -16,7 +16,11 @@
                 </div>
                 <div class="btn-card">
                   <div class="btn-group">
-                    <%= link_to "Inscris-toi pour consulter", lesson_path(lesson.id), class: "btn btn-primary btn-index" %>
+                  <% if current_user %>
+                      <%= link_to "Consulter", lesson_path(lesson.id), class: "btn btn-primary btn-index"  %>
+                  <% else %>
+                      <%= link_to "Connecte-toi pour consulter", new_user_session_path, class: "btn btn-primary btn-index"  %>
+                  <% end %>
                   </div>
                 </div>
               </div>
@@ -35,13 +39,13 @@
         <%= image_tag('banner.jpg', class: 'banner') %>
       </div>
       <div class="swiper-slide">
+        <%= image_tag('banner4.jpg', class: 'banner') %>
+      </div>
+      <div class="swiper-slide">
         <%= image_tag('banner2.jpg', class: 'banner') %>
       </div>
       <div class="swiper-slide">
         <%= image_tag('banner3.jpg', class: 'banner') %>
-      </div>
-      <div class="swiper-slide">
-        <%= image_tag('banner4.jpg', class: 'banner') %>
       </div>
     </div>
   </div>
@@ -95,7 +99,11 @@
                 </div>
                 <div class="btn-card">
                   <div class="btn-group">
-                    <%= link_to "consulter", lesson_path(lesson.id), class: "btn btn-primary btn-index" %>
+                  <% if current_user %>
+                      <%= link_to "Consulter", lesson_path(lesson.id), class: "btn btn-primary btn-index"  %>
+                  <% else %>
+                      <%= link_to "Inscris-toi pour consulter", new_user_registration_path, class: "btn btn-primary btn-index" %>
+                  <% end %>
                   </div>
                 </div>
               </div>
@@ -110,7 +118,11 @@
   <h2 class="title mt-4 white-title">
     N'attends plus :
   </h2>
-    <%= link_to "Inscris-toi !", new_user_registration_path, class: "btn btn-primary big-btn" %>
+    <div class="btn-card">
+      <div class="btn-group">
+          <%= link_to "Inscris-toi !", new_user_registration_path, class: "btn btn-primary big-btn" %>
+      </div>
+    </div>
   </div>
 
 <% end %>

@@ -33,9 +33,9 @@
               <br></br>
               <% end %>
               <%= form_tag comments_path(lesson_id: params['id'], action: 'create') do%>
-              <%= label_tag 'title' %><br>
+              <%= label_tag 'Titre de ton commentaire :' %><br>
               <%= text_field_tag :title %><br>
-              <%= label_tag 'comment' %><br>
+              <%= label_tag 'Contenu de ton commentaire sur la ressource :' %><br>
               <%= text_area_tag :content %><br>
               <%= submit_tag "Ajouter un commentaire", class: 'btn btn-primary' %>
               <%end%>
