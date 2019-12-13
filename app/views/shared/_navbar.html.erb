@@ -41,7 +41,7 @@
       <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
       <form>
       <% if current_user %>
-        <button class="btn btn-link" type="submit"><%= link_to "Mon profil", users_show_path(:id => current_user.id) %></button>
+        <button class="btn btn-link" type="submit"><%= link_to "Mon profil", user_path(:id => current_user.id) %></button>
         <button class="btn btn-link" type="submit"><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></button>
         <% else %>
         <button class="btn btn-link" type="submit"><%= link_to "Se connecter", new_user_session_path%></button>
