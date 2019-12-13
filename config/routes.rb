@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :topics
   resources :comments
   resources :favorites
+  resources :charges
 end
