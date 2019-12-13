@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'users/index'
+  post 'users/edit'
   get 'users/show'
   get 'topics/show'
   root 'lessons#index'

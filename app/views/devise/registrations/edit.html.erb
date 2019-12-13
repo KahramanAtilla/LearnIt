@@ -1,5 +1,37 @@
 <div class="container">
-  <br>
+<br>
+<%= form_for users_index_path do |f| %>
+  <section id="cover">
+  <div id="cover-caption">
+      <div class="container">
+        <div class="row text-white ">
+          <div class="col-sm-6 offset-sm-3 text-center">
+            <br>
+            <h1 class="text-center"> Complète ton profil </h1>
+            <br>
+            <div class="info-form">
+              <div class="form-group">
+                <h5 class="text-left">Prénom</h5>
+                <%= f.text_field :first_name, class: 'form-control' %>
+                <br>
+                <h5 class="text-left">Nom</h5>
+                <%= f.text_field :last_name, class: 'form-control' %>
+                <br>
+               </div>
+               
+              <%= f.submit "Enregistrer",class:"btn btn-success"%>
+            </div>
+               </div>
+           </div>
+         </div>
+       </div>
+     </div>
+    </div>
+  </section>
+     
+  
+               <% end %>
+<br>
   <h2 class="text-black mb-4">Change ton mot de passe :</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
