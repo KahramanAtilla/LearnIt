@@ -1,11 +1,26 @@
-<h2><%= @topic_attribute.name %></h2>
-<br/>
-<% @topic.all.each do |x| %>
 
-<%= x.title %>
+<h2 class="text-black title mb-4"> <%= @topic_attribute.name %></h2>
+<div class="center mt-4" >
+    <div class="card">
+      <div class="row banniere">
+        <% @topic.all.each do |x| %>
+          <div class="element">
+            <div class="card-body">
+              <div class="text-card">
+                <h5 class="card-title"><%= x.title %></h5>
+                <p class="card-text"><%= x.content[0..200] %></p>
+              </div>
+              <div class="btn-card">
+                <div class="btn-group">
+
 <a class="btn btn-primary" href="<%= lesson_path(x.id) %>" role="button">Voir la ressource</a>
-<br/>
-
-
-<br/>
-<% end %>
+                </div>
+              </div>
+            </div>
+            <div class="separator"></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
