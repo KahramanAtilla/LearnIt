@@ -9,7 +9,11 @@
       <h3>Liens utiles</h3>
       <ul class="list-unstyled footer-links">
         <li><a href="/">Accueil</a></li>
-        <li><a href="/lessons/new">Ajouter un cours</a></li>
+        <% if current_user %>
+          <li><a href="/lessons/new">Ajouter un cours</a></li>
+        <% else %>
+          <li><%= link_to "Ajouter un cours", new_user_session_path %></li>
+        <% end %>
       </ul>
     </div>
 
