@@ -11,7 +11,8 @@
               </div>
               <div class="btn-card">
                 <div class="btn-group">
-                  <%= link_to "Consulter ce cours", lesson_path(x.id), class: "btn btn-primary btn-index" %> 
+                  <%= link_to "Consulter ce cours", lesson_path(x.id), class: "btn btn-primary btn-index" %>
+                  <%= link_to 'Supprimer', favorite_path(x.id), method: :delete, data: { confirm: 'Supprimer des favoris ?' }, class: "btn btn-primary btn-index ml-1" %> 
                 </div>
               </div>
             </div>
