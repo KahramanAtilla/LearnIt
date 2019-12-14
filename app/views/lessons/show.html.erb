@@ -13,13 +13,12 @@
               <% end %>
             <% end %>
           </div>
-          <h6 class="card-subtitle mb-2 text-muted align-start ml-3"><%= @lesson.topic.name %></h6>
+          <h5 class="card-subtitle mb-2 text-muted align-start ml-3"> Matière : <%= @lesson.topic.name %></h5>
           <p class="card-text align-start ml-3"><%= @lesson.content %></p>
           <%= link_to "Retour à la page d'accueil", root_path %>
         </div>
         <div class="separator"></div>
         <div class="col-8">
-          </br>
 
           </br>
           <div class="comment-notes">
@@ -29,13 +28,17 @@
               <h4 class="card-title"><%= comment.title %></h4>
               <h6 class="card-subtitle mb-2 text-muted"> <%= "Commentaire de : " %><%= comment.user.first_name %> <%= comment.user.last_name %></h6>
               <p class="card-text"><%= comment.content %></p>
-              <br></br>
+              <% if current_user == comment.user %> 
+              <%= link_to 'Supprimer mon commentaire', [comment.lesson, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
+              <div class="separator"></div>
+              <% end %>
+            <h4> Ajouter un commentaire : </h4>
               <%= form_tag comments_path(lesson_id: params['id'], action: 'create') do%>
               <%= label_tag 'Titre de ton commentaire :' %><br>
               <%= text_field_tag :title %><br>
               <%= label_tag 'Contenu de ton commentaire sur la ressource :' %><br>
-              <%= text_area_tag :content %><br>
+              <%= text_area_tag :content, @content, rows: 5, cols: 110 %><br>
               <%= submit_tag "Ajouter un commentaire", class: 'btn btn-primary' %>
               <%end%>
             </div>

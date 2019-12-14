@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get 'topics/show'
   root 'lessons#index'
   devise_for :users
-  resources :lessons
+  resources :lessons do 
+    resources :comments
+  end
   resources :topics
   resources :comments
   resources :favorites
