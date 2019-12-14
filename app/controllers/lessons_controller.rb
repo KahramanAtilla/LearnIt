@@ -35,8 +35,9 @@ class LessonsController < ApplicationController
   end
 
   def destroy
-    @user = current_user
-    @lessons_u = current_user.lessons
+    @lesson = Lesson.find(params[:id])
+    @lesson.destroy
+    redirect_to users_index_path
   end
 
 end

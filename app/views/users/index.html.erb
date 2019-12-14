@@ -1,5 +1,5 @@
   <h3 class="text-black title mb-4">
-    Les cours que j'ai partagés :
+    Le(s) cours que j'ai partagé(s) :
   </h3>
  <% @all_my_lessons.each do |lesson| %>
             <div class="element">
@@ -14,6 +14,7 @@
                   <div class="btn-group">
                   <% if current_user %>
                       <%= link_to "Consulter", lesson_path(lesson.id), class: "btn btn-primary btn-index"  %>
+                      <%= link_to 'Supprimer', lesson_path(lesson.id), method: :delete, data: { confirm: 'Supprimer le cours ?' }, class: "btn btn-primary btn-index ml-1" %>
                   <% else %>
                       <%= link_to "Connecte-toi pour consulter", new_user_session_path, class: "btn btn-primary btn-index"  %>
                   <% end %>
