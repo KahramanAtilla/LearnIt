@@ -19,4 +19,9 @@ class UsersController < ApplicationController
 			render :edit
 		end
 	end
+
+	def index
+		@user = current_user
+		@all_my_lessons = @user.lessons.reverse
+	end
 end

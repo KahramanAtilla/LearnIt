@@ -3,7 +3,7 @@ class LessonsController < ApplicationController
     if params[:title]
       @lessons = Lesson.where('title ILIKE ?', "%#{params[:title]}%")
     else
-      @lessons = Lesson.all.last(10)
+      @lessons = Lesson.last(10).reverse
     end
   end
 
@@ -24,7 +24,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new(user: @user, title: params[:title], content: params[:content], topic_id: params[:top])
 
     if @lesson.save
-      redirect_to lessons_path
+      redirect_to users_index_path
     else
       render 'lessons/new'
     end
@@ -33,4 +33,10 @@ class LessonsController < ApplicationController
   def lesson_params
     params.require(:lesson).permit(:title)
   end
+
+  def destroy
+    @user = current_user
+    @lessons_u = current_user.lessons
+  end
+
 end

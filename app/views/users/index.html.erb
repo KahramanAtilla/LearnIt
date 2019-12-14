@@ -1,0 +1,25 @@
+  <h3 class="text-black title mb-4">
+    Les cours que j'ai partagés :
+  </h3>
+ <% @all_my_lessons.each do |lesson| %>
+            <div class="element">
+              <div class="card-body">
+                <div class="text-card">
+                  <h4 class="card-title"><%= lesson.title %></h4>
+                  <h6 class="card-subtitle mb-2 text-muted"><%= lesson.topic.name %></h6>
+                  <h6 class="card-subtitle mb-2 text-muted"> <%= "Leçon de : " %><%= lesson.user.first_name %> <%= lesson.user.last_name %></h6>
+                  <p class="card-text"><%= lesson.content[0..200] %></p>
+                </div>
+                <div class="btn-card">
+                  <div class="btn-group">
+                  <% if current_user %>
+                      <%= link_to "Consulter", lesson_path(lesson.id), class: "btn btn-primary btn-index"  %>
+                  <% else %>
+                      <%= link_to "Connecte-toi pour consulter", new_user_session_path, class: "btn btn-primary btn-index"  %>
+                  <% end %>
+                  </div>
+                </div>
+              </div>
+              <div class="separator"></div>
+            </div>
+          <% end %>
