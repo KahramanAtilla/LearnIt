@@ -1,17 +1,16 @@
 <br>
-<h2 class="text-center section-title">Bienvenue sur ton profil</h2>
-<div class="row">
-  <div class="container">
-    <div class="card border-primary mb-3">
-      <div class="card-body">
-        <h3 class="card-title">Mes informations</h3>
-        <h6 class="card-subtitle mb-2 text-muted">Mon prénom : <%= @user.first_name%></h6>
-        <h6 class="card-subtitle mb-2 text-muted">Mon nom : <%= @user.last_name%></h6>
-        <h6 class="card-subtitle mb-2 text-muted">Mon email : <%= @user.email%></h6>
-        <%= link_to "Modifie ton profil", edit_user_registration_path, class: "card-link" %>
-        
-      </div>
+<div class="center mt-4" >
+<h2 class="center mt-4">Bienvenue sur ton profil</h2>
+    <div class="center mt-4">
+        <h5 class="card-subtitle mb-2 text-muted">Ton prénom : <%= @user.first_name%></h5>
+        <h5 class="card-subtitle mb-2 text-muted">Ton nom : <%= @user.last_name%></h5>
+        <h5 class="card-subtitle mb-2 text-muted">Ton email : <%= @user.email%></h5>
+        <h5 class="card-subtitle mb-2 text-muted">Ta ville : <%= @user.city%></h5>
+        <h5 class="card-subtitle mb-2 text-muted">Ton école : <%= @user.school%></h5>
+        <h5 class="card-subtitle mb-2 text-muted">Ton diplôme : <%= @user.diploma%></h5>
+        <br/>
+        <%= link_to "Modifier mes informations", edit_user_path(@user.id), class: "btn" %>
+        <%= link_to "Changer de mot de passe/Quitter Learn it", edit_user_registration_path, class: "btn" %>
       <br>
     </div>
-  </div>
 </div>

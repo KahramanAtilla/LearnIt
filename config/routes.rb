@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'users/show'
   root 'lessons#index'
   devise_for :users
+  resources :users
   resources :lessons do 
     resources :comments
   end

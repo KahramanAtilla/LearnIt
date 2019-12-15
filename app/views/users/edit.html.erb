@@ -2,26 +2,35 @@
   <section id="cover">
   <div id="cover-caption">
       <div id="container" class="container">
-        <div class="row text-white ">
+        <div class="row text-black ">
           <div class="col-sm-6 offset-sm-3 text-center">
             <br>
-            <h1 class="text-center"> Complète ton profil </h1>
+            <h2 class="text-center"> Complète ton profil </h2>
             <br>
             <div class="info-form">
               <div class="form-group">
-                <h5 class="text-left">Prénom</h5>
+                <h6 class="text-left">Ton prénom</h6>
                 <%= f.text_field :first_name, class: 'form-control' %>
                 <br>
-                <h5 class="text-left">Nom</h5>
+                <h6 class="text-left">Ton nom</h6>
                 <%= f.text_field :last_name, class: 'form-control' %>
+                <br>
+                 <h6 class="text-left">Ta ville</h6>
+                <%= f.text_field :city, class: 'form-control' %>
+                <br>
+                <h6 class="text-left">Ton école</h6>
+                <%= f.text_field :school, class: 'form-control' %>
+                <br>
+                <h6 class="text-left">Ton diplôme</h6>
+                <%= f.text_field :diploma, class: 'form-control' %>
                 <br>
                </div>
                <div class="form-group">
               <div class="actions">
-              <%= f.submit "Enregistrer",class:"btn btn-success"%>
+              <%= f.submit "Enregistrer / Editer",class:"btn"%>
             </div>
-                <br><br>
-                <%= link_to "Back", :back %>
+                <br>
+                <%= link_to "Retour à mes informations de profil", :back %>
                </div>
            </div>
          </div>
