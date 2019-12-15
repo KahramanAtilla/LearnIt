@@ -14,7 +14,7 @@
             <% end %>
           </div>
           <h5 class="card-subtitle mb-2 text-muted align-start ml-3"> Matière : <%= @lesson.topic.name %></h5>
-          <p class="card-text align-start ml-3"><%= @lesson.content %></p>
+          <p class="card-text align-start ml-3"><%= simple_format(@lesson.content) %></p>
           <%= link_to "Retour à la page d'accueil", root_path %>
         </div>
         <div class="separator"></div>
@@ -27,8 +27,8 @@
               <% @lesson.comments.all.each do |comment| %>
               <h4 class="card-title"><%= comment.title %></h4>
               <h6 class="card-subtitle mb-2 text-muted"> <%= "Commentaire de : " %><%= comment.user.first_name %> <%= comment.user.last_name %></h6>
-              <p class="card-text"><%= comment.content %></p>
-              <% if current_user == comment.user %> 
+              <p class="card-text"><%= simple_format(comment.content) %></p>
+              <% if current_user == comment.user %>
               <%= link_to 'Supprimer mon commentaire', [comment.lesson, comment], method: :delete, data: { confirm: 'Supprimer le commentaire ?' } %>
               <% end %>
               <div class="separator"></div>

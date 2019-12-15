@@ -4,7 +4,7 @@
     <div class="card">
       <div class="row banniere">
         <div class="">
-      
+
           <% @lessons.each do |lesson| %>
             <div class="element">
               <div class="card-body">
@@ -12,7 +12,7 @@
                   <h4 class="card-title"><%= lesson.title %></h4>
                   <h6 class="card-subtitle mb-2 text-muted"><%= lesson.topic.name %></h6>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= "Leçon de : " %><%= lesson.user.first_name %> <%= lesson.user.last_name %></h6>
-                  <p class="card-text"><%= lesson.content[0..200] %></p>
+                  <p class="card-text"><%= strip_tags(lesson.content[0..200]) %></p>
                 </div>
                 <div class="btn-card">
                   <div class="btn-group">
@@ -95,7 +95,7 @@
                   <h4 class="card-title"><%= lesson.title %></h4>
                   <h6 class="card-subtitle mb-2 text-muted"><%= lesson.topic.name %></h6>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= "Leçon de : " %><%= lesson.user.first_name %> <%= lesson.user.last_name %></h6>
-                  <p class="card-text"><%= lesson.content[0..200] %></p>
+                  <p class="card-text"><%= strip_tags(lesson.content[0..200]) %></p>
                 </div>
                 <div class="btn-card">
                   <div class="btn-group">
