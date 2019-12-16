@@ -12,7 +12,7 @@
                   <h4 class="card-title"><%= lesson.title %></h4>
                   <h6 class="card-subtitle mb-2 text-muted"><%= lesson.topic.name %></h6>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= "Leçon de : " %><%= lesson.user.first_name %> <%= lesson.user.last_name %></h6>
-                  <p class="card-text"><%= strip_tags(lesson.content[0..148]) %></p>
+                  <p class="card-text"><%= strip_tags(lesson.content[0..90]) %></p>
                 </div>
                 <div class="btn-card">
                   <div class="btn-group">
@@ -79,9 +79,9 @@
       </p>
     </div>
   </div>
-  <h3 class="text-black title mb-4">
+  <h2 class="text-black title mb-4">
     Les 10 derniers cours partagés par les membres de Learn it :
-  </h3>
+  </h2><br/>
 
   <div class="center mt-4" >
     <div class="card">
@@ -95,7 +95,7 @@
                   <h4 class="card-title"><%= lesson.title %></h4>
                   <h6 class="card-subtitle mb-2 text-muted"><%= lesson.topic.name %></h6>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= "Leçon de : " %><%= lesson.user.first_name %> <%= lesson.user.last_name %></h6>
-                  <p class="card-text"><%= strip_tags(lesson.content[0..130]) %></p>
+                  <p class="card-text"><%= strip_tags(lesson.content[0..90]) %></p>
                 </div>
                 <div class="btn-card">
                   <div class="btn-group">

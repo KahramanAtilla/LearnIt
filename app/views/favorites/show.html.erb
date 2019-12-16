@@ -7,7 +7,9 @@
             <div class="card-body">
               <div class="text-card">
                 <h5 class="card-title"><%= x.title %></h5>
-                <p class="card-text"><%= strip_tags(x.content[0..80]) %></p>
+                <h6 class="card-subtitle mb-2 text-muted"><%= x.topic.name %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"> <%= "Leçon de : " %><%= x.user.first_name %> <%= x.user.last_name %></h6>
+                <p class="card-text"><%= strip_tags(x.content[0..70]) %></p>
               </div>
               <div class="btn-card">
                 <div class="btn-group">

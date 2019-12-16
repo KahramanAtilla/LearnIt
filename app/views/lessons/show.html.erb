@@ -15,7 +15,8 @@
           </div>
           <h5 class="card-subtitle mb-2 text-muted align-start ml-3"> Matière : <%= @lesson.topic.name %></h5>
           <p class="card-text align-start ml-3"><%= simple_format(@lesson.content) %></p>
-          <%= link_to "Retour à la page d'accueil", root_path %>
+          <%= link_to " Voir mes favoris", favorite_path(current_user.id) %>
+          <%= link_to "Retour à la page d'accueil ", root_path%>
         </div>
         <div class="separator"></div>
         <div class="col-8">
