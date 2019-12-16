@@ -1,7 +1,7 @@
 <div class="center mt-4" >
-<h3 class="text-black title mb-4">
+<h2 class="text-black title mb-4">
     Ajoute un cours :
-  </h3>
+  </h2>
 <%= form_tag url_for(action:'create'), method: "post", :rows => 10, style: 'width:100%;' do %>
   <%= label_tag 'Titre de ta ressource' %><br>
   <%= text_field_tag 'title' %>

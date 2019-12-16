@@ -22,6 +22,6 @@ class UsersController < ApplicationController
 
 	def index
 		@user = current_user
-		@all_my_lessons = @user.lessons.reverse
+		@all_my_lessons = @user.lessons
 	end
 end

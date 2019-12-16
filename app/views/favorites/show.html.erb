@@ -2,17 +2,17 @@
 <div class="center mt-4" >
     <div class="card">
       <div class="row banniere">
-        <% @fav.lessons.each do |x| %>
+        <% @fav.lessons.reverse.each do |x| %>
           <div class="element">
             <div class="card-body">
               <div class="text-card">
                 <h5 class="card-title"><%= x.title %></h5>
-                <p class="card-text"><%= x.content[0..200] %></p>
+                <p class="card-text"><%= strip_tags(x.content[0..80]) %></p>
               </div>
               <div class="btn-card">
                 <div class="btn-group">
                   <%= link_to "Consulter ce cours", lesson_path(x.id), class: "btn btn-primary btn-index" %>
-                  <%= link_to 'Supprimer', favorite_path(x.id), method: :delete, data: { confirm: 'Supprimer des favoris ?' }, class: "btn btn-primary btn-index ml-1" %> 
+                  <%= link_to 'Supprimer des favoris', favorite_path(x.id), method: :delete, data: { confirm: 'Supprimer des favoris ?' }, class: "btn btn-primary btn-index ml-1" %> 
                 </div>
               </div>
             </div>

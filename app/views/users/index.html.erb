@@ -1,6 +1,6 @@
-  <h3 class="text-black title mb-4">
+  <h2 class="text-black title mb-4">
     Le(s) cours que j'ai partagé(s) :
-  </h3>
+  </h2>
  <% @all_my_lessons.each do |lesson| %>
             <div class="element">
               <div class="card-body">
@@ -8,7 +8,7 @@
                   <h4 class="card-title"><%= lesson.title %></h4>
                   <h6 class="card-subtitle mb-2 text-muted"><%= lesson.topic.name %></h6>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= "Leçon de : " %><%= lesson.user.first_name %> <%= lesson.user.last_name %></h6>
-                  <p class="card-text"><%= lesson.content[0..200] %></p>
+                  <p class="card-text"><%= strip_tags(lesson.content[0..120]) %></p>
                 </div>
                 <div class="btn-card">
                   <div class="btn-group">

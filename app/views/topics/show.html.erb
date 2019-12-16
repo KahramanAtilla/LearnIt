@@ -8,12 +8,12 @@
             <div class="card-body">
               <div class="text-card">
                 <h5 class="card-title"><%= x.title %></h5>
-                <p class="card-text"><%= x.content[0..200] %></p>
+                <p class="card-text"><%= strip_tags(x.content[0..100]) %></p>
               </div>
               <div class="btn-card">
                 <div class="btn-group">
 
-<a class="btn btn-primary" href="<%= lesson_path(x.id) %>" role="button">Voir la ressource</a>
+<a class="btn btn-primary btn-index ml-1" href="<%= lesson_path(x.id) %>" role="button">Voir la ressource</a>
                 </div>
               </div>
             </div>

@@ -12,7 +12,7 @@
                   <h4 class="card-title"><%= lesson.title %></h4>
                   <h6 class="card-subtitle mb-2 text-muted"><%= lesson.topic.name %></h6>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= "Leçon de : " %><%= lesson.user.first_name %> <%= lesson.user.last_name %></h6>
-                  <p class="card-text"><%= strip_tags(lesson.content[0..200]) %></p>
+                  <p class="card-text"><%= strip_tags(lesson.content[0..148]) %></p>
                 </div>
                 <div class="btn-card">
                   <div class="btn-group">
@@ -95,7 +95,7 @@
                   <h4 class="card-title"><%= lesson.title %></h4>
                   <h6 class="card-subtitle mb-2 text-muted"><%= lesson.topic.name %></h6>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= "Leçon de : " %><%= lesson.user.first_name %> <%= lesson.user.last_name %></h6>
-                  <p class="card-text"><%= strip_tags(lesson.content[0..200]) %></p>
+                  <p class="card-text"><%= strip_tags(lesson.content[0..130]) %></p>
                 </div>
                 <div class="btn-card">
                   <div class="btn-group">
@@ -114,7 +114,18 @@
       </div>
     </div>
   </div>
-  <% unless current_user %>
+  <% if current_user %>
+    <div class="black-zone">
+      <h2 class="title mt-4 white-title">
+        N'attends plus :
+      </h2>
+        <div class="btn-card">
+          <div class="btn-group">
+              <%= link_to "Ajoute un cours !", new_lesson_path, class: "btn btn-primary big-btn" %>
+          </div>
+        </div>
+    </div>
+    <% else %>
     <div class="black-zone">
       <h2 class="title mt-4 white-title">
         N'attends plus :
